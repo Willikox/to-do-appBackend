@@ -36,6 +36,5 @@ npm install -g wscat
 corre el servidor de Wesocket:
 wscat -c ws://localhost:<puerto>/ws
 
-wscat -c ws://localhost:<puerto>/ws
 
 
