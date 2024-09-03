@@ -30,3 +30,12 @@ dotnet ef database update
 ### 4. Correr proyecto
 dotnet run
 
+### 5. Probar Websocket
+npm install -g wscat
+
+corre el servidor de Wesocket:
+wscat -c ws://localhost:<puerto>/ws
+
+wscat -c ws://localhost:<puerto>/ws
+
+
