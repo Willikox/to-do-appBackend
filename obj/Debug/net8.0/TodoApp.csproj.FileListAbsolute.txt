@@ -104,3 +104,4 @@
 /Users/williamchabla/Documents/TestDesarrollo/TodoApp/obj/Debug/net8.0/TodoApp.pdb
 /Users/williamchabla/Documents/TestDesarrollo/TodoApp/obj/Debug/net8.0/TodoApp.genruntimeconfig.cache
 /Users/williamchabla/Documents/TestDesarrollo/TodoApp/obj/Debug/net8.0/ref/TodoApp.dll
+/Users/williamchabla/Documents/TestDesarrollo/TodoApp/obj/Debug/net8.0/TodoApp.sourcelink.json

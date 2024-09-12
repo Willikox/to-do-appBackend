@@ -12,7 +12,7 @@ builder.Services.AddDbContext<TodoContext>(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<TodoWebSocketHandler>();
-
+    
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

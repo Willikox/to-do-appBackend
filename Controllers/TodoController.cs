@@ -1,3 +1,4 @@
+using System.Data;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/[controller]")]
@@ -42,6 +43,27 @@ public class TodoController : ControllerBase
         todoItem.IsCompleted = !todoItem.IsCompleted;
         await _context.SaveChangesAsync();
         
+        var handler = HttpContext.RequestServices.GetRequiredService<TodoWebSocketHandler>();
+        await handler.NotifyTaskChangeAsync();
+
+        return NoContent();
+    }
+
+    [HttpPut("edit/{id}")]
+    public async Task<IActionResult> UpdateTodoItem(int id, [FromBody] TodoItem updatedItem)
+    {
+        var todoItem = await _context.TodoItems.FindAsync(id);
+        if (todoItem == null)
+        {
+            return NotFound();                                
+        }
+
+        todoItem.Title = updatedItem.Title;
+        todoItem.Description = updatedItem.Description;
+        todoItem.CreatedDate = DateTime.UtcNow;
+
+        await _context.SaveChangesAsync();
+
         var handler = HttpContext.RequestServices.GetRequiredService<TodoWebSocketHandler>();
         await handler.NotifyTaskChangeAsync();
 
